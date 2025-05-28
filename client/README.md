@@ -6,4 +6,5 @@
 
 ### Executar o Frontend
 
+npm i <br>
 npm run dev -- --host
