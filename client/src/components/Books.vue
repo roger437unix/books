@@ -195,6 +195,12 @@
 import axios from 'axios';
 import Alert from './Alert.vue';
 
+//----------------------------------------------------------------------------------------
+
+const url = 'http://localhost:8080/books'
+
+//----------------------------------------------------------------------------------------
+
 export default {
   data() {
     return {
@@ -221,7 +227,7 @@ export default {
   },
   methods: {
     addBook(payload) {
-      const path = 'http://localhost:8080/books';
+      const path = url;
       axios.post(path, payload)
         .then(() => {
           this.getBooks();
@@ -234,7 +240,7 @@ export default {
         });
     },
     getBooks() {
-      const path = 'http://localhost:8080/books';
+      const path = url;
       axios.get(path)
         .then((res) => {
           this.books = res.data.books;
