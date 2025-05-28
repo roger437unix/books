@@ -2,38 +2,39 @@
 
 # pybooks Back-end
 
-# Executar local
+# Executar local em Debian GNU/Linux
 
 python -m venv .venv
 
-.venv\Scripts\activate
+source .venv/bin/activate
 
-python -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
 
 pip install -r requirements.txt
 
-python app.py
+python3 app.py
 
-http://127.0.0.1:8080/ping <br>
+http://127.0.0.1:8080/ping
+
 http://127.0.0.1:8080/books
 
 
 # Criar e enviar para ACR imagem Docker utilizando WSL
 
-### No Windows PowerShell
+### No terminal Shell
 
-$Env:SERVER="Servidor de logon"
+export SERVER="Servidor de logon"
 
-$Env:SERVER
+echo $SERVER
 
-wsl docker login $Env:SERVER
+docker login $SERVER
 
-wsl docker build --tag $Env:SERVER/apiflask-8080 .
+docker build --tag $SERVER/api-flask-8080 .
 
-wsl docker images
+docker images
 
-wsl docker run -d --rm --name api -p 8080:8080 $Env:SERVER/apiflask-8080
+docker run -d --rm --name api -p 8080:8080 $SERVER/api-flask-8080
 
 http://localhost:8080/books
 
-wsl docker push $Env:SERVER/apiflask-8080
+docker push $SERVER/api-flask-8080
