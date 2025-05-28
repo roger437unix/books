@@ -12,22 +12,22 @@ npm i
 
 npm run dev -- --host
 
-# Criar e enviar para ACR imagem Docker utilizando WSL
+# Criar e enviar para ACR imagem Docker
 
-### No Windows PowerShell
+### No terminal Shell
 
-$Env:SERVER="Servidor de logon"
+$SERVER="Servidor de logon"
 
-$Env:SERVER
+echo $SERVER
 
-wsl docker login $Env:SERVER
+docker login $SERVER
 
-wsl docker build --tag $Env:SERVER/front-vue-9000 .
+docker build --tag $SERVER/front-vue-9000 .
 
-wsl docker images
+docker images
 
-wsl docker run -d --rm --name vue -p 9000:9000 $Env:SERVER/front-vue-9000
+docker run -d --rm --name vue-9000 -p 9000:9000 $SERVER/front-vue-9000
 
 http://localhost:9000/books
 
-wsl docker push $Env:SERVER/front-vue-9000
+docker push $SERVER/front-vue-9000
