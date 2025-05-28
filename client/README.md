@@ -6,7 +6,28 @@
 
 ./src/components/Books.vue [Linha 200]
 
-### Executar o Frontend
+### Executar o Frontend local
 
-npm i <br>
+npm i
+
 npm run dev -- --host
+
+# Criar e enviar para ACR imagem Docker utilizando WSL
+
+### No Windows PowerShell
+
+$Env:SERVER="Servidor de logon"
+
+$Env:SERVER
+
+wsl docker login $Env:SERVER
+
+wsl docker build --tag $Env:SERVER/front-vue-9000 .
+
+wsl docker images
+
+wsl docker run -d --rm --name vue -p 9000:9000 $Env:SERVER/front-vue-9000
+
+http://localhost:9000/books
+
+wsl docker push $Env:SERVER/front-vue-9000
