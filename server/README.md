@@ -19,7 +19,7 @@ http://127.0.0.1:8080/ping
 http://127.0.0.1:8080/books
 
 
-# Criar e enviar para ACR imagem Docker utilizando WSL
+# Criar e enviar para ACR imagem Docker
 
 ### No terminal Shell
 
