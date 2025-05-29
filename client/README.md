@@ -2,9 +2,9 @@
 
 # nodebooks Front-end
 
-### Alterar o endereço do Back-end
+### Configurar o Ip do Back-end
 
-./src/components/Books.vue [Linha 200]
+.env/VITE_API_IP
 
 ### Executar o Frontend local
 
